@@ -1,1 +1,15 @@
-<p>menu works!</p>
+<header class="cabecalho">
+  <nav class="menu" aria-label="Menu principal">
+    <a class="marca" routerLink="/">GameHub</a>
+
+    <ul class="links">
+      <li>
+        <a routerLink="/" routerLinkActive="ativo"
+          [routerLinkActiveOptions]="{ exact: true }" ariaCurrentWhenActive="page">Início</a>
+      </li>
+      <li><a routerLink="/jogos" routerLinkActive="ativo" ariaCurrentWhenActive="page">Jogos</a></li>
+      <li><a routerLink="/cadastrar" routerLinkActive="ativo" ariaCurrentWhenActive="page">Cadastrar</a></li>
+      <li><a routerLink="/sobre" routerLinkActive="ativo" ariaCurrentWhenActive="page">Sobre</a></li>
+    </ul>
+  </nav>
+</header>

@@ -1,0 +1,60 @@
+.cabecalho {
+  background-color: #25282e;
+  border-bottom: 1px solid #3a3f48;
+}
+
+.menu {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.marca {
+  color: #f1f3f5;
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.links a {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 4px;
+  color: #d3d7de;
+  text-decoration: none;
+}
+
+.links a:hover {
+  background-color: #303640;
+  color: #8bb8ed;
+}
+
+.links a.ativo {
+  background-color: #304764;
+  color: #ffffff;
+}
+
+@media (max-width: 600px) {
+  .menu {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .links {
+    gap: 4px;
+  }
+}

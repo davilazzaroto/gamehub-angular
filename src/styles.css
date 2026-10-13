@@ -1,1 +1,42 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #1c1f24;
+  color: #d3d7de;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+}
+
+h1 {
+  margin: 0 0 20px;
+  color: #f1f3f5;
+  font-size: 28px;
+}
+
+a {
+  color: #8bb8ed;
+}
+
+button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #365f8b;
+  color: #ffffff;
+  font: inherit;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #416f9e;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #8bb8ed;
+  outline-offset: 3px;
+}
