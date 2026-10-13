@@ -1,4 +1,116 @@
-import { Service } from '@angular/core';
+import { Injectable } from '@angular/core';
+import { Jogo } from '../models/jogo';
 
-@Service()
-export class Jogo {}
+@Injectable({ providedIn: 'root' })
+export class JogoService {
+  private jogos: Jogo[] = [
+    {
+      id: 1,
+      nome: 'Minecraft',
+      descricao: 'Explore um mundo de blocos e construa suas próprias aventuras.',
+      categoria: 'Sandbox',
+      preco: 99.90,
+      avaliacao: 4.8,
+      imagem: 'images/minecraft.jpg',
+      disponivel: true,
+    },
+    {
+      id: 2,
+      nome: 'Stardew Valley',
+      descricao: 'Cuide de uma fazenda e conheça os moradores de uma pequena cidade.',
+      categoria: 'Simulação',
+      preco: 24.99,
+      avaliacao: 4.9,
+      imagem: 'images/stardew-valley.jpg',
+      disponivel: true,
+    },
+    {
+      id: 3,
+      nome: 'Hollow Knight',
+      descricao: 'Explore um reino subterrâneo e enfrente criaturas misteriosas.',
+      categoria: 'Aventura',
+      preco: 46.99,
+      avaliacao: 4.9,
+      imagem: 'images/hollow-knight.jpg',
+      disponivel: true,
+    },
+    {
+      id: 4,
+      nome: 'Celeste',
+      descricao: 'Supere desafios de plataforma durante a escalada de uma montanha.',
+      categoria: 'Plataforma',
+      preco: 36.99,
+      avaliacao: 4.8,
+      imagem: 'images/celeste.jpg',
+      disponivel: true,
+    },
+    {
+      id: 5,
+      nome: 'Portal 2',
+      descricao: 'Resolva quebra-cabeças usando portais e raciocínio lógico.',
+      categoria: 'Puzzle',
+      preco: 32.99,
+      avaliacao: 4.9,
+      imagem: 'images/portal-2.jpg',
+      disponivel: true,
+    },
+    {
+      id: 6,
+      nome: 'Terraria',
+      descricao: 'Explore, construa e enfrente inimigos em um mundo em duas dimensões.',
+      categoria: 'Sandbox',
+      preco: 19.99,
+      avaliacao: 4.7,
+      imagem: 'images/terraria.jpg',
+      disponivel: true,
+    },
+    {
+      id: 7,
+      nome: 'The Witcher 3',
+      descricao: 'Viva as aventuras de um caçador de monstros em um mundo de fantasia.',
+      categoria: 'RPG',
+      preco: 129.99,
+      avaliacao: 4.8,
+      imagem: 'images/the-witcher-3.jpg',
+      disponivel: false,
+    },
+    {
+      id: 8,
+      nome: 'Overcooked! 2',
+      descricao: 'Prepare receitas em cozinhas divertidas e desafiadoras.',
+      categoria: 'Simulação',
+      preco: 59.90,
+      avaliacao: 4.6,
+      imagem: 'images/overcooked-2.jpg',
+      disponivel: true,
+    },
+  ];
+
+  listar(): Jogo[] {
+    return this.jogos;
+  }
+
+  buscarPorId(id: number): Jogo | undefined {
+    return this.jogos.find((jogo) => jogo.id === id);
+  }
+
+  adicionar(jogo: Jogo): void {
+    this.jogos.push(jogo);
+  }
+
+  filtrarPorCategoria(categoria: string): Jogo[] {
+    return this.jogos.filter(
+      (jogo) => jogo.categoria.toLowerCase() === categoria.trim().toLowerCase(),
+    );
+  }
+
+  buscarPorNome(nome: string): Jogo[] {
+    return this.jogos.filter(
+      (jogo) => jogo.nome.toLowerCase().includes(nome.trim().toLowerCase()),
+    );
+  }
+
+  totalJogos(): number {
+    return this.jogos.length;
+  }
+}
