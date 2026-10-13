@@ -1,1 +1,33 @@
-<h1>Início</h1>
+<section class="introducao">
+  <h1>Bem-vindo ao GameHub</h1>
+  <p>Conheça jogos de diferentes categorias e encontre sua próxima aventura.</p>
+  <div class="resumo">
+    <p><strong>{{ totalJogos }}</strong> jogos cadastrados</p>
+    <p><strong>{{ totalGratuitos }}</strong> jogos gratuitos</p>
+  </div>
+  <a class="botao" routerLink="/jogos">Ver todos os jogos</a>
+</section>
+
+<section aria-labelledby="titulo-destaques">
+  <h2 id="titulo-destaques">Jogos em destaque</h2>
+  @if (jogosDestaque.length > 0) {
+    <div class="jogos-destaque">
+      @for (jogo of jogosDestaque; track jogo.id) {
+        <article class="card">
+          <img [src]="jogo.imagem" [alt]="jogo.nome" (error)="usarImagemProvisoria($event)">
+          <div class="card-conteudo">
+            <h3>{{ jogo.nome }}</h3>
+            <p>{{ jogo.categoria }}</p>
+            @if (jogo.preco === 0) {
+              <p class="preco">Gratuito</p>
+            } @else {
+              <p class="preco">{{ jogo.preco | currency:'BRL':'symbol':'1.2-2':'pt-BR' }}</p>
+            }
+          </div>
+        </article>
+      }
+    </div>
+  } @else {
+    <p>Nenhum jogo cadastrado no momento.</p>
+  }
+</section>

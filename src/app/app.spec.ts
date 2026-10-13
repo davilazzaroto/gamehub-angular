@@ -27,12 +27,12 @@ describe('App', () => {
   });
 
   it.each([
-    ['/', 'Início'],
+    ['/', 'Bem-vindo ao GameHub'],
     ['/jogos', 'Jogos'],
     ['/jogos/1', 'Detalhes do jogo'],
     ['/cadastrar', 'Cadastrar jogo'],
     ['/sobre', 'Sobre'],
-    ['/pagina-inexistente', 'Início'],
+    ['/pagina-inexistente', 'Bem-vindo ao GameHub'],
   ])('should render %s', async (url, titulo) => {
     const harness = await RouterTestingHarness.create();
     await harness.navigateByUrl(url);
