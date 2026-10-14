@@ -31,7 +31,7 @@ describe('App', () => {
     ['/jogos', 'Jogos'],
     ['/jogos/1', 'Minecraft'],
     ['/cadastrar', 'Cadastrar jogo'],
-    ['/sobre', 'Sobre'],
+    ['/sobre', 'Sobre o GameHub'],
     ['/pagina-inexistente', 'Bem-vindo ao GameHub'],
   ])('should render %s', async (url, titulo) => {
     const harness = await RouterTestingHarness.create();

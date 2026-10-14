@@ -1,0 +1,25 @@
+.sobre {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.sobre p {
+  margin: 0 0 16px;
+  line-height: 1.7;
+}
+
+.secao {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid #3a3f48;
+}
+
+h2 {
+  margin: 0 0 16px;
+  color: #8bb8ed;
+  font-size: 22px;
+}
+
+strong {
+  color: #f1f3f5;
+}

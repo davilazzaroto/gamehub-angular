@@ -9,6 +9,7 @@ body {
   color: #d3d7de;
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.5;
+  overflow-wrap: anywhere;
 }
 
 h1 {
