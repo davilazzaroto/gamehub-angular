@@ -1,1 +1,29 @@
-<h1>Detalhes do jogo</h1>
+@if (jogo) {
+  <article class="detalhes">
+    <img class="capa" [src]="jogo.imagem" [alt]="jogo.nome"
+      (error)="usarImagemProvisoria($event)">
+
+    <div class="informacoes">
+      <h1>{{ jogo.nome }}</h1>
+      <p class="descricao">{{ jogo.descricao }}</p>
+      <p><strong>Categoria:</strong> {{ jogo.categoria }}</p>
+      @if (jogo.preco === 0) {
+        <p><strong>Preço:</strong> Gratuito</p>
+      } @else {
+        <p><strong>Preço:</strong> {{ jogo.preco | currency:'BRL':'symbol':'1.2-2':'pt-BR' }}</p>
+      }
+      <p><strong>Avaliação:</strong> {{ jogo.avaliacao }} / 5</p>
+      @if (jogo.disponivel) {
+        <p><strong>Situação:</strong> Disponível</p>
+      } @else {
+        <p><strong>Situação:</strong> Indisponível</p>
+      }
+      <a class="botao" routerLink="/jogos">Voltar ao catálogo</a>
+    </div>
+  </article>
+} @else {
+  <section class="nao-encontrado">
+    <h1>Jogo não encontrado</h1>
+    <a class="botao" routerLink="/jogos">Voltar ao catálogo</a>
+  </section>
+}

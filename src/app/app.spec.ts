@@ -29,7 +29,7 @@ describe('App', () => {
   it.each([
     ['/', 'Bem-vindo ao GameHub'],
     ['/jogos', 'Jogos'],
-    ['/jogos/1', 'Detalhes do jogo'],
+    ['/jogos/1', 'Minecraft'],
     ['/cadastrar', 'Cadastrar jogo'],
     ['/sobre', 'Sobre'],
     ['/pagina-inexistente', 'Bem-vindo ao GameHub'],
