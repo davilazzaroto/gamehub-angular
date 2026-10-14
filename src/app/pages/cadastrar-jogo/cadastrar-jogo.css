@@ -1,0 +1,79 @@
+.cadastro {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 24px;
+  border: 1px solid #3a3f48;
+  border-radius: 6px;
+  background-color: #25282e;
+}
+
+.campo {
+  margin-bottom: 20px;
+  flex: 1;
+  min-width: 0;
+}
+
+.campo label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.campo input,
+textarea,
+select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #59616e;
+  border-radius: 4px;
+  background-color: #1c1f24;
+  color: #f1f3f5;
+  font: inherit;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input::placeholder {
+  color: #b1b8c4;
+}
+
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid #8bb8ed;
+  outline-offset: 2px;
+}
+
+.linha {
+  display: flex;
+  gap: 20px;
+}
+
+.disponibilidade {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.disponibilidade input {
+  accent-color: #365f8b;
+}
+
+.erro {
+  margin: 8px 0 0;
+  color: #f0abab;
+  font-size: 14px;
+}
+
+@media (max-width: 500px) {
+  .cadastro {
+    padding: 16px;
+  }
+
+  .linha {
+    flex-direction: column;
+    gap: 0;
+  }
+}

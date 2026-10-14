@@ -94,8 +94,9 @@ export class JogoService {
     return this.jogos.find((jogo) => jogo.id === id);
   }
 
-  adicionar(jogo: Jogo): void {
-    this.jogos.push(jogo);
+  adicionar(jogo: Omit<Jogo, 'id'>): void {
+    const id = Math.max(0, ...this.jogos.map((jogoExistente) => jogoExistente.id)) + 1;
+    this.jogos.push({ ...jogo, id });
   }
 
   filtrarPorCategoria(categoria: string): Jogo[] {
