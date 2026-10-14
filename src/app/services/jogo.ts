@@ -21,7 +21,7 @@ export class JogoService {
       categoria: 'Simulação',
       preco: 24.99,
       avaliacao: 4.9,
-      imagem: 'images/stardew-valley.jpg',
+      imagem: 'images/Stardew_Valley.jpg',
       disponivel: true,
     },
     {
@@ -31,7 +31,7 @@ export class JogoService {
       categoria: 'Aventura',
       preco: 46.99,
       avaliacao: 4.9,
-      imagem: 'images/hollow-knight.jpg',
+      imagem: 'images/hollow_knigth.jpg',
       disponivel: true,
     },
     {
@@ -51,7 +51,7 @@ export class JogoService {
       categoria: 'Puzzle',
       preco: 32.99,
       avaliacao: 4.9,
-      imagem: 'images/portal-2.jpg',
+      imagem: 'images/Portal_2.jpg',
       disponivel: true,
     },
     {
@@ -71,7 +71,7 @@ export class JogoService {
       categoria: 'RPG',
       preco: 129.99,
       avaliacao: 4.8,
-      imagem: 'images/the-witcher-3.jpg',
+      imagem: 'images/The_Witcher_3.jpg',
       disponivel: false,
     },
     {
@@ -81,7 +81,7 @@ export class JogoService {
       categoria: 'Simulação',
       preco: 59.90,
       avaliacao: 4.6,
-      imagem: 'images/overcooked-2.jpg',
+      imagem: 'images/overcooked.jpg',
       disponivel: true,
     },
   ];

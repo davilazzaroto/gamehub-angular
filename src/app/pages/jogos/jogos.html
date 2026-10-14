@@ -1,1 +1,28 @@
 <h1>Jogos</h1>
+
+<div class="filtros">
+  <div class="campo">
+    <label for="nome-busca">Buscar por nome</label>
+    <input id="nome-busca" type="search" placeholder="Digite o nome do jogo"
+      [(ngModel)]="nomeBusca" (ngModelChange)="aplicarFiltros()">
+  </div>
+  <div class="campo">
+    <label for="categoria">Categoria</label>
+    <select id="categoria" [(ngModel)]="categoriaSelecionada" (ngModelChange)="aplicarFiltros()">
+      <option value="">Todas as categorias</option>
+      @for (categoria of categorias; track categoria) {
+        <option [value]="categoria">{{ categoria }}</option>
+      }
+    </select>
+  </div>
+</div>
+
+<p aria-live="polite">Resultados encontrados: {{ jogos.length }}</p>
+
+<div class="lista-jogos">
+  @for (jogo of jogos; track jogo.id) {
+    <app-jogo-card [jogo]="jogo"></app-jogo-card>
+  } @empty {
+    <p>Nenhum jogo corresponde aos filtros informados.</p>
+  }
+</div>

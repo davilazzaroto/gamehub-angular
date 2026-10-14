@@ -1,0 +1,59 @@
+:host {
+  display: block;
+}
+
+.card {
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid #3a3f48;
+  border-radius: 6px;
+  background-color: #25282e;
+}
+
+.card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  background-color: #303640;
+}
+
+.card-conteudo {
+  padding: 16px;
+}
+
+.descricao {
+  font-size: 14px;
+}
+
+h2 {
+  margin: 0 0 12px;
+  color: #f1f3f5;
+  font-size: 20px;
+}
+
+p {
+  margin: 0 0 12px;
+}
+
+.preco {
+  font-weight: bold;
+}
+
+.preco,
+.disponivel {
+  color: #8bb8ed;
+}
+
+.botao {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 4px;
+  background-color: #365f8b;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.botao:hover {
+  background-color: #416f9e;
+}

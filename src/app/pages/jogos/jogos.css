@@ -1,0 +1,59 @@
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.campo {
+  flex: 1;
+  min-width: 0;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #59616e;
+  border-radius: 4px;
+  background-color: #25282e;
+  color: #f1f3f5;
+  font: inherit;
+}
+
+input::placeholder {
+  color: #b1b8c4;
+}
+
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid #8bb8ed;
+  outline-offset: 2px;
+}
+
+.lista-jogos {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+@media (max-width: 900px) {
+  .lista-jogos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 500px) {
+  .filtros {
+    flex-direction: column;
+  }
+
+  .lista-jogos {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,1 +1,25 @@
-<p>jogo-card works!</p>
+<article class="card">
+  <img [src]="jogo.imagem" [alt]="jogo.nome" (error)="usarImagemProvisoria($event)">
+  <div class="card-conteudo">
+    <h2>{{ jogo.nome }}</h2>
+    <p>{{ jogo.categoria }}</p>
+    <p class="descricao">{{ jogo.descricao }}</p>
+    @if (jogo.preco === 0) {
+      <p class="preco">Gratuito</p>
+    } @else {
+      <p class="preco">{{ jogo.preco | currency:'BRL':'symbol':'1.2-2':'pt-BR' }}</p>
+    }
+    <p>Avaliação: {{ jogo.avaliacao }} / 5</p>
+    @switch (classificacao) {
+      @case ('Excelente') { <p>Excelente</p> }
+      @case ('Bom') { <p>Bom</p> }
+      @default { <p>Regular</p> }
+    }
+    @if (jogo.disponivel) {
+      <p class="disponivel">Disponível</p>
+    } @else {
+      <p>Indisponível</p>
+    }
+    <a class="botao" [routerLink]="['/jogos', jogo.id]">Ver detalhes</a>
+  </div>
+</article>
