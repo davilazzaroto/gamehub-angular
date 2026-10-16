@@ -11,5 +11,6 @@ export const routes: Routes = [
   { path: 'jogos/:id', component: JogoDetalhes },
   { path: 'cadastrar', component: CadastrarJogo },
   { path: 'sobre', component: Sobre },
+  // Leva para o início quando a URL não corresponde a nenhuma página.
   { path: '**', redirectTo: '' },
 ];

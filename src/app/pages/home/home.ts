@@ -17,6 +17,7 @@ export class Home {
 
   totalJogos = this.jogoService.totalJogos();
   totalGratuitos = this.jogoService.listar().filter((jogo) => jogo.preco === 0).length;
+  // Os destaques seguem a ordem do catálogo, sem ordenar pela avaliação.
   jogosDestaque = this.jogoService.listar().slice(0, 4);
 
   usarImagemProvisoria(event: Event): void {

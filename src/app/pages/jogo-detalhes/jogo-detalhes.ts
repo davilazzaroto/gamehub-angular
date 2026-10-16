@@ -22,16 +22,19 @@ export class JogoDetalhes {
   jogo: Jogo | undefined;
 
   constructor() {
+    // Atualiza o jogo quando o ID da URL muda e encerra a escuta ao sair da página.
     this.route.paramMap.pipe(takeUntilDestroyed()).subscribe((parametros) => {
       const parametroId = parametros.get('id');
       const id = Number(parametroId);
 
+      // Só aceita um ID inteiro positivo, sem letras ou casas decimais.
       if (!parametroId || !/^\d+$/.test(parametroId) || !Number.isSafeInteger(id) || id <= 0) {
         this.jogo = undefined;
       } else {
         this.jogo = this.jogoService.buscarPorId(id);
       }
 
+      // Sinaliza que a tela precisa refletir o resultado da busca.
       this.changeDetector.markForCheck();
     });
   }

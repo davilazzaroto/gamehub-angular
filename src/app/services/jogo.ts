@@ -3,6 +3,7 @@ import { Jogo } from '../models/jogo';
 
 @Injectable({ providedIn: 'root' })
 export class JogoService {
+  // Os cadastros ficam na memória e são perdidos ao recarregar a página.
   private jogos: Jogo[] = [
     {
       id: 1,
@@ -95,16 +96,19 @@ export class JogoService {
   }
 
   adicionar(jogo: Omit<Jogo, 'id'>): void {
+    // Usa o maior ID cadastrado como base para não repetir IDs.
     const id = Math.max(0, ...this.jogos.map((jogoExistente) => jogoExistente.id)) + 1;
     this.jogos.push({ ...jogo, id });
   }
 
+  // Compara a categoria sem diferenciar maiúsculas e minúsculas.
   filtrarPorCategoria(categoria: string): Jogo[] {
     return this.jogos.filter(
       (jogo) => jogo.categoria.toLowerCase() === categoria.trim().toLowerCase(),
     );
   }
 
+  // Aceita parte do nome e ignora espaços nas pontas da busca.
   buscarPorNome(nome: string): Jogo[] {
     return this.jogos.filter(
       (jogo) => jogo.nome.toLowerCase().includes(nome.trim().toLowerCase()),

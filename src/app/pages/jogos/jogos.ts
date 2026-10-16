@@ -15,6 +15,7 @@ export class Jogos {
   nomeBusca = '';
   categoriaSelecionada = '';
   jogos = this.jogoService.listar();
+  // Monta as opções do filtro sem repetir categorias.
   categorias = [...new Set(this.jogoService.listar().map((jogo) => jogo.categoria))];
 
   aplicarFiltros(): void {
@@ -22,6 +23,7 @@ export class Jogos {
 
     if (this.categoriaSelecionada !== '') {
       const jogosDaCategoria = this.jogoService.filtrarPorCategoria(this.categoriaSelecionada);
+      // Mantém apenas os jogos que atendem aos dois filtros.
       resultados = resultados.filter((jogo) =>
         jogosDaCategoria.some((jogoDaCategoria) => jogoDaCategoria.id === jogo.id),
       );

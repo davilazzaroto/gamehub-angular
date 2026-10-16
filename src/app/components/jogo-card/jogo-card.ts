@@ -26,6 +26,7 @@ export class JogoCard {
   }
 
   usarImagemProvisoria(event: Event): void {
+    // Mostra uma capa padrão se a imagem do jogo falhar ao carregar.
     const imagem = event.target as HTMLImageElement;
     imagem.src = 'images/jogo-placeholder.svg';
   }

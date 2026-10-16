@@ -24,6 +24,7 @@ export class CadastrarJogo {
   tentouSalvar = false;
 
   get nomeInvalido(): boolean {
+    // Um nome só com espaços também é considerado vazio.
     return this.nome.trim().length === 0;
   }
 
@@ -37,8 +38,10 @@ export class CadastrarJogo {
   }
 
   salvar(): void {
+    // Libera as mensagens de erro mesmo nos campos ainda não tocados.
     this.tentouSalvar = true;
 
+    // Só cadastra quando os valores e a categoria são válidos.
     if (this.nomeInvalido || this.precoInvalido || this.avaliacaoInvalida
       || !this.categorias.includes(this.categoria)) {
       return;
@@ -50,10 +53,12 @@ export class CadastrarJogo {
       categoria: this.categoria,
       preco: this.preco!,
       avaliacao: this.avaliacao!,
+      // Usa uma capa padrão quando a URL não foi preenchida.
       imagem: this.imagem.trim() || 'images/jogo-placeholder.svg',
       disponivel: this.disponivel,
     });
 
+    // Volta ao catálogo para mostrar o jogo recém-cadastrado.
     this.router.navigate(['/jogos']);
   }
 }
